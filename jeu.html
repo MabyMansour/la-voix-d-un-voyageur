@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu interactif – La Voix d’un Voyageur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans antialiased text-gray-900">
+    <!-- Navigation bar -->
+    <nav class="bg-blue-900 text-white">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-bold">La Voix d’un Voyageur</a>
+        <button id="nav-toggle" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <ul id="nav-menu" class="hidden md:flex space-x-6">
+          <li><a href="index.html" class="hover:underline">Accueil</a></li>
+          <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+          <li><a href="histoires.html" class="hover:underline">Histoires</a></li>
+          <li><a href="statistiques.html" class="hover:underline">Statistiques</a></li>
+          <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+          <li><a href="jeu.html" class="hover:underline font-semibold">Jeu</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Jeu interactif : Périple Inconnu</h1>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl">
+          Mettez‑vous dans la peau d’un migrant et prenez des décisions cruciales à chaque étape du parcours.
+          Une manière ludique et instructive de comprendre les choix qui façonnent un périple.
+        </p>
+      </div>
+    </header>
+
+    <main class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Le jeu « Périple Inconnu » est disponible sur une plateforme dédiée. Votre mission : parcourir les routes
+          dangereuses du Sahara et de la Méditerranée en faisant des choix réalistes et parfois difficiles.
+        </p>
+        <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-8 py-3 rounded-md shadow hover:bg-yellow-300 transition duration-300">Lancer le jeu</a>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-2">À propos du projet</h4>
+          <p class="text-sm text-gray-300">
+            « La Voix d’un Voyageur » est une initiative du projet transmédia « Racines et Ailes du Sénégal » visant à
+            sensibiliser aux réalités du parcours migratoire irrégulier et à mettre en lumière les alternatives locales.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Navigation</h4>
+          <ul class="text-sm space-y-1">
+            <li><a href="index.html" class="hover:underline">Accueil</a></li>
+            <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+            <li><a href="histoires.html" class="hover:underline">Histoires</a></li>
+            <li><a href="statistiques.html" class="hover:underline">Statistiques</a></li>
+            <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="mentions.html" class="hover:underline">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-xs text-gray-400">&copy; 2025 Racines et Ailes du Sénégal. Tous droits réservés.</div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

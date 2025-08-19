@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Histoires – La Voix d’un Voyageur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans antialiased text-gray-900">
+    <!-- Navigation bar -->
+    <nav class="bg-blue-900 text-white">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-bold">La Voix d’un Voyageur</a>
+        <button id="nav-toggle" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <ul id="nav-menu" class="hidden md:flex space-x-6">
+          <li><a href="index.html" class="hover:underline">Accueil</a></li>
+          <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+          <li><a href="histoires.html" class="hover:underline font-semibold">Histoires</a></li>
+          <li><a href="statistiques.html" class="hover:underline">Statistiques</a></li>
+          <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+          <li><a href="jeu.html" class="hover:underline">Jeu</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Histoires interactives</h1>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl">
+          Chaque histoire est un voyage composé de 11 chapitres. Choisissez celle qui vous inspire et embarquez pour une expérience immersive.
+        </p>
+      </div>
+    </header>
+
+    <!-- Stories grid -->
+    <main class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Story item 1 -->
+        <div class="bg-white rounded-lg shadow overflow-hidden flex flex-col">
+          <div class="h-48 bg-gradient-to-r from-blue-700 to-blue-500 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">Histoire 1</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-bold mb-2">La traversée du désert</h3>
+            <p class="text-gray-600 mb-4 flex-1">
+              Suivez le parcours poignant d’un jeune Sénégalais à travers le Sahara. Découvrez ses
+              doutes, ses rencontres et les dangers qui jalonnent sa route vers l’inconnu.
+            </p>
+            <a href="chapitre1.html" class="self-start mt-auto bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-md shadow hover:bg-yellow-300 transition">Commencer</a>
+          </div>
+        </div>
+        <!-- Story item 2 (placeholder) -->
+        <div class="bg-white rounded-lg shadow overflow-hidden flex flex-col">
+          <div class="h-48 bg-gradient-to-r from-green-700 to-green-500 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">Histoire 2</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-bold mb-2">Sur les routes d’Europe</h3>
+            <p class="text-gray-600 mb-4 flex-1">
+              L’odyssée d’une jeune femme à travers l’Espagne et l’Italie, entre espoirs déçus et
+              résilience face aux obstacles administratifs et sociaux.
+            </p>
+            <a href="#" class="self-start mt-auto bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-md shadow hover:bg-yellow-300 transition">Bientôt disponible</a>
+          </div>
+        </div>
+        <!-- Story item 3 (placeholder) -->
+        <div class="bg-white rounded-lg shadow overflow-hidden flex flex-col">
+          <div class="h-48 bg-gradient-to-r from-red-700 to-red-500 flex items-center justify-center">
+            <span class="text-white text-2xl font-bold">Histoire 3</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="text-xl font-bold mb-2">Le retour</h3>
+            <p class="text-gray-600 mb-4 flex-1">
+              Après plusieurs années d’errance, un migrant décide de rentrer au pays. Il partage
+              ses regrets, ses apprentissages et ses nouvelles ambitions pour sa communauté.
+            </p>
+            <a href="#" class="self-start mt-auto bg-yellow-400 text-blue-900 font-semibold px-4 py-2 rounded-md shadow hover:bg-yellow-300 transition">Bientôt disponible</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-2">À propos du projet</h4>
+          <p class="text-sm text-gray-300">
+            « La Voix d’un Voyageur » est une initiative du projet transmédia « Racines et Ailes du Sénégal » visant à
+            sensibiliser aux réalités du parcours migratoire irrégulier et à mettre en lumière les alternatives locales.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Navigation</h4>
+          <ul class="text-sm space-y-1">
+            <li><a href="index.html" class="hover:underline">Accueil</a></li>
+            <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+            <li><a href="statistiques.html" class="hover:underline">Statistiques</a></li>
+            <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+            <li><a href="jeu.html" class="hover:underline">Jeu interactif</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="mentions.html" class="hover:underline">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-xs text-gray-400">&copy; 2025 Racines et Ailes du Sénégal. Tous droits réservés.</div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

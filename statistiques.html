@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statistiques – La Voix d’un Voyageur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="font-sans antialiased text-gray-900">
+    <!-- Navigation bar -->
+    <nav class="bg-blue-900 text-white">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-bold">La Voix d’un Voyageur</a>
+        <button id="nav-toggle" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <ul id="nav-menu" class="hidden md:flex space-x-6">
+          <li><a href="index.html" class="hover:underline">Accueil</a></li>
+          <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+          <li><a href="histoires.html" class="hover:underline">Histoires</a></li>
+          <li><a href="statistiques.html" class="hover:underline font-semibold">Statistiques</a></li>
+          <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+          <li><a href="jeu.html" class="hover:underline">Jeu</a></li>
+          <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Statistiques & Données</h1>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl">
+          Explorez des infographies et des graphiques interactifs pour mieux comprendre
+          les tendances migratoires, leurs causes et leurs impacts.
+        </p>
+      </div>
+    </header>
+
+    <!-- Charts section -->
+    <main class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 space-y-16">
+        <!-- Bar chart: Nombre de départs par année -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Nombre de départs par année</h2>
+          <canvas id="departChart" height="200"></canvas>
+        </section>
+        <!-- Line chart: Flux migratoire mensuel sur un an -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Flux migratoire mensuel</h2>
+          <canvas id="fluxChart" height="200"></canvas>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-2">À propos du projet</h4>
+          <p class="text-sm text-gray-300">
+            « La Voix d’un Voyageur » est une initiative du projet transmédia « Racines et Ailes du Sénégal » visant à
+            sensibiliser aux réalités du parcours migratoire irrégulier et à mettre en lumière les alternatives locales.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-2">Navigation</h4>
+          <ul class="text-sm space-y-1">
+            <li><a href="index.html" class="hover:underline">Accueil</a></li>
+            <li><a href="apropos.html" class="hover:underline">À propos</a></li>
+            <li><a href="histoires.html" class="hover:underline">Histoires</a></li>
+            <li><a href="temoignages.html" class="hover:underline">Témoignages</a></li>
+            <li><a href="jeu.html" class="hover:underline">Jeu interactif</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+            <li><a href="mentions.html" class="hover:underline">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-xs text-gray-400">&copy; 2025 Racines et Ailes du Sénégal. Tous droits réservés.</div>
+    </footer>
+
+    <script>
+      // Responsive nav toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden');
+      });
+      // Chart 1: Nombre de départs par année
+      const departCtx = document.getElementById('departChart').getContext('2d');
+      new Chart(departCtx, {
+        type: 'bar',
+        data: {
+          labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+          datasets: [
+            {
+              label: 'Nombre de départs',
+              data: [1200, 1500, 900, 1800, 1300, 1000],
+              backgroundColor: '#4FAAC6',
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+            title: {
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              ticks: { color: '#374151' },
+              grid: { display: false },
+            },
+            y: {
+              ticks: { color: '#374151' },
+              grid: { color: 'rgba(55,65,81,0.15)' },
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      // Chart 2: Flux migratoire mensuel
+      const fluxCtx = document.getElementById('fluxChart').getContext('2d');
+      new Chart(fluxCtx, {
+        type: 'line',
+        data: {
+          labels: ['Jan', 'Fév', 'Mars', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
+          datasets: [
+            {
+              label: 'Arrivées',
+              data: [80, 90, 75, 100, 95, 110, 120, 130, 110, 100, 90, 85],
+              borderColor: '#F4C430',
+              backgroundColor: 'rgba(244,196,48,0.2)',
+              tension: 0.4,
+              fill: true,
+            },
+            {
+              label: 'Départs',
+              data: [100, 110, 95, 120, 105, 115, 125, 140, 130, 120, 100, 90],
+              borderColor: '#4FAAC6',
+              backgroundColor: 'rgba(79,170,198,0.2)',
+              tension: 0.4,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { color: '#374151' },
+            },
+            title: {
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              ticks: { color: '#374151' },
+              grid: { display: false },
+            },
+            y: {
+              ticks: { color: '#374151' },
+              grid: { color: 'rgba(55,65,81,0.15)' },
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
